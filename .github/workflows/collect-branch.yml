@@ -191,7 +191,7 @@ jobs:
       - name: Generate Artifact Hash File
         run: |
           cd ${{ vars.COLLECTOR }}
-          sha256sum -b ${{ vars.COLLECTOR }}-${{ needs.Date.outputs.Date }}* | tee \
+          sha256sum -b *.* | tee \
             ${{ vars.COLLECTOR }}-${{ needs.Date.outputs.Date }}.sha
 
       - name: Upload Artifact Hash File
