@@ -126,7 +126,7 @@ jobs:
 
       - name: TARchive code base for ${{ vars.COLLECTOR }}
         run: |
-          tar -czvC .. \
+          tar -cvI pigz -C .. \
             -f ${{ vars.COLLECTOR }}-code-${{ needs.Date.outputs.Date }}.tgz $(basename ${{ github.WORKSPACE }}) \
             | tee ${{ vars.COLLECTOR }}-code-${{ needs.Date.outputs.Date }}.tgz.txt
 
